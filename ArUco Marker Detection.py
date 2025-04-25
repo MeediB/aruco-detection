@@ -49,8 +49,8 @@ print("[INFO] detecting '{}' tags...".format(args["type"]))
 arucoDict = cv2.aruco.getPredefinedDictionary(ARUCO_DICT[args["type"]])
 arucoParams = cv2.aruco.DetectorParameters()
 # initialize the video stream and allow the camera sensor to warm up
-print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
+print("[INFO] starting video stream...")
 time.sleep(2.0)
 
 # loop over the frames from the video stream
@@ -99,6 +99,7 @@ while True:
 	cv2.imshow("Frame", frame)
 	key = cv2.waitKey(1) & 0xFF
 	# if the `q` key was pressed, break from the loop
+	
 	if key == ord("q"):
 		break
 # do a bit of cleanup
